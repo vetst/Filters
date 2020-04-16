@@ -1,0 +1,21 @@
+package com.users.service;
+
+import com.users.exception.DBException;
+import com.users.model.User;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public interface UserService {
+    public void createTable() throws DBException;
+
+    public User validateUser(String name, String password) throws SQLException, DBException;
+
+    public boolean addUser(String name, String surName, String password, String role) throws DBException;
+
+    public boolean updateUser(Long id, String name, String surName, String password, String role) throws DBException;
+
+    public boolean deleteUser(Long id) throws DBException;
+
+    public List<User> getAllUser() throws DBException;
+}
