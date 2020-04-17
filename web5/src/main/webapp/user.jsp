@@ -9,5 +9,6 @@
 </head>
 <body>
 <h2>Welcome!</h2><br>
+<center><a href="<c:url value='/logout' />">Logout</a></center>
 </body>
 </html>

@@ -9,6 +9,7 @@
 </head>
 <body>
 <h2>Обновить пользователя</h2><br>
+<center><a href="<c:url value='/logout' />">Logout</a></center>
 <form action="edit" method="POST">
     <input type="hidden" name="userId" value="${userId}">
     <p><input type="text" value="${name}" name="name" placeholder="${name}" required></p>

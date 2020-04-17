@@ -18,6 +18,7 @@ import java.sql.SQLException;
 public class LoginServlet extends HttpServlet {
 
     private UserService userService = UserServiceImpl.getInstance();
+
     @Override
     public void init() {
         try {
@@ -28,6 +29,7 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);

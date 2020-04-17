@@ -16,9 +16,11 @@ public class UserFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         final HttpSession session = request.getSession(false);
+
         if (session == null || session.getAttribute("user") == null) {
             if (session != null && session.getAttribute("admin") == null)
-                servletRequest.getServletContext().getRequestDispatcher("/login").forward(request, response);
+                response.sendRedirect(request.getContextPath() + "/login");
+            return;
         }
         filterChain.doFilter(request, response);
     }

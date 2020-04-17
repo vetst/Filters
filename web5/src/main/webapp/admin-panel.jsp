@@ -9,6 +9,8 @@
 <body>
 <h2>Список пользователей</h2>
 
+<center><a href="<c:url value='/logout' />">Logout</a></center>
+
 <table border="1" cellpadding="5" cellspacing="5">
     <tr>
         <td><b>Id</b></td>

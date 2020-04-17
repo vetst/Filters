@@ -13,9 +13,15 @@ public class AdminFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
+
         final HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("admin") == null) {
-            servletRequest.getServletContext().getRequestDispatcher("/login").forward(request, response);
+
+        if (session == null || (session.getAttribute("admin") == null && session.getAttribute("user") == null)) {
+            response.sendRedirect(request.getContextPath() + "/login");
+            return;
+        } else if (session.getAttribute("user") != null) {
+            response.sendRedirect(request.getContextPath() + "/user");
+            return;
         }
         filterChain.doFilter(request, response);
     }
