@@ -11,6 +11,9 @@ import java.io.IOException;
 public class UserPanelServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        HttpSession session = req.getSession();
+//        String user = (String) session.getAttribute("user");
+//        session.
         req.getServletContext().getRequestDispatcher("/user.jsp").forward(req, resp);
     }
 }

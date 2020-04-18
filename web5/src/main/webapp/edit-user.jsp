@@ -15,7 +15,11 @@
     <p><input type="text" value="${name}" name="name" placeholder="${name}" required></p>
     <p><input type="text" value="${surName}" name="surName" placeholder="${surName}" required></p>
     <p><input type="text" value="${password}" name="password" placeholder="${password}" required></p>
-    <p><input type="text" value="${role}" name="role" placeholder="${role}" required></p>
+    <select name="role">
+        <option value="null">Выберите роль</option>
+        <option value="admin">admin</option>
+        <option value="user">user</option>
+    </select><br><br>
     <input type="submit" value="Обновить"/></form>
 </body>
 </html>
